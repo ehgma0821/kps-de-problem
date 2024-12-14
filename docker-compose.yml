@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  # 힌트: image, container_name, restart, ports, volumes, environment 필요에 따라 설정
+  mysql: "답안을 채워주세요"
+  mongodb: "답안을 채워주세요"
+  spark-master:
+    image: bitnami/spark:3.2.3
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+  spark-worker:
+    image: bitnami/spark:3.2.3
+    container_name: spark-worker
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./app:/app
