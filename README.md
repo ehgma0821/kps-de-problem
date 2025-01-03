@@ -4,6 +4,10 @@
 
 주어진 요구사항에 따라 Docker 기반 환경에서 MySQL, MongoDB, 그리고 PySpark를 활용한 데이터 파이프라인을 개발해야 합니다.
 
+아래 링크로 접속하여 과제 파일들을 다운로드 받아주세요.
+
+https://github.com/ehgma0821/kps-de-problem
+
 # 시스템 요구사항
 
 1. mysql 은 8.0 으로 구성
